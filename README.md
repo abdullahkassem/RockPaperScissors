@@ -1,1 +1,1 @@
-# WebCalculator
+# RockPaperScissors
