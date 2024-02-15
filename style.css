@@ -1,0 +1,62 @@
+*
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* border: 2px solid red; */
+}
+
+.welcomeMsg
+{
+    width: fit-content;
+    color: darkslategray;
+    text-align: center;
+    margin: auto;
+    white-space: pre-wrap;
+}
+
+.scoreNum
+{
+    text-align: center;
+    font-size: larger;
+}
+
+.instruction
+{
+    color: darkslategray;
+    text-align: center;
+    /* padding-left: 30px; */
+}
+
+#scoreboard
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0px;
+}
+
+.scoreboardItems
+{
+    flex: 0 0 auto;
+}
+
+#PlayerChoice
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.options
+{
+    flex: 0 0 auto;
+    
+}
+
+.imageLabel
+{
+    text-align: center;
+}
+
+.options img
+{
+    width: 160px;
+    height: auto;
+}

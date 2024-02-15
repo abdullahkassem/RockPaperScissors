@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>RPS</title>
     <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
-    <p>Welcome to WebCalculator, a project I built in my Web dev learning journey. </p>
-    <div id="rockPart">
-            
+    <h1 class="welcomeMsg">Welcome to Rock Paper Scissors, a project I built in my Web dev learning journey.
+
+        <span style="color: forestgreen;">First to 5, wins the game!</span> </h1>
+    <div id="scoreboard">
+        <div id="playerWins" class="scoreboardItems">
+            <h2>Player:</h2>
+            <p class="scoreNum">0</p>
+        </div>
+        <div id="numOfDraws" class="scoreboardItems">
+            <h2>Draws:</h2>
+            <p class="scoreNum">0</p>
+        </div>
+        <div id="computerWins" class="scoreboardItems">
+            <h2>Computer:</h2>
+            <p class="scoreNum">0</p>
+        </div>
+    </div>
+    <h1 class="instruction">Choose your next move</h1>
+    <div id="PlayerChoice">
+        <div id="rock" class="options">
+            <img src="./Images/rock.png" alt="Picture of a rock">
+            <p class="imageLabel">Rock</p>
+        </div>
+        <div id="paper" class="options">
+            <img src="./Images/paper.png" alt="Picture of a paper">
+            <p class="imageLabel">Paper</p>
+        </div>
+        <div id="scissor" class="options">
+            <img src="./Images/scissors.png" alt="Picture of a scissor">
+            <p class="imageLabel">Scissors</p>
+        </div>
     </div>
 </body>
 </html>
