@@ -9,9 +9,13 @@ const winTracker = {
       this.playerWins++;
       const score = document.querySelector("#playerWins .scoreNum");
       score.textContent = this.playerWins;
+      flashDiv(document.querySelector("#playerWins"));
       if(this.playerWins >= 5)
       {
         console.log("Player Wins!!");
+        this.resetWins();
+        gameEnd("Player has won the game");
+        confetti();
       }
     },
   
@@ -19,25 +23,58 @@ const winTracker = {
       this.compWins++;
       const score = document.querySelector("#computerWins .scoreNum");
       score.textContent = this.compWins;
+      flashDiv(document.querySelector("#computerWins"));
+      if(this.compWins >= 5)
+      {
+        console.log("Computer Wins!!");
+        this.resetWins();
+        gameEnd("Computer has won the game");
+      }
     },
   
     drawIncrement() {
       this.draws++;
       const score = document.querySelector("#numOfDraws .scoreNum");
       score.textContent = this.draws;
+      flashDiv(document.querySelector("#numOfDraws"));
+      
     },
 
     resetWins() {
         this.playerWins = 0;
         this.compWins = 0;
         this.draws = 0;
+        
     },
   };
   
 
-// let playerWins = 0;
-// let compWins = 0;
-// let Draws = 0;
+function gameEnd(txt)
+{
+    const gameContainer = document.querySelector("#gameContainer");
+    const finalText = document.querySelector("#endMessage");
+    finalText.textContent = txt;
+    
+    gameContainer.classList.add("fadeout");
+    setTimeout(() => {
+        gameContainer.classList.remove("fadeout");
+        gameContainer.classList.add("disappear");
+        finalText.classList.remove("disappear");
+    }, 1000); // Adjust timeout for 1 second
+
+    
+
+
+}
+
+function flashDiv(divElement) 
+{
+    divElement.classList.add("flicker");
+    setTimeout(() => {
+        divElement.classList.remove("flicker");
+    }, 1000); // Adjust timeout for 1 second
+}
+
 
 function getComputerChoice()
 {
@@ -71,35 +108,6 @@ function playRound(playerSelection, compSelection)
     
 }
 
-
-// function getPlayerChoice()
-// {
-//     let playerPlay;
-//     while(true)
-//     {
-//         playerPlay = prompt("Enter your Move.")
-//         if(options.includes(playerPlay))
-//             {break;}
-//         else
-//             {alert("Please enter a valid choice.");}
-//     }
-
-//     return playerPlay.toLowerCase();
-// }
-
-
-// function playGame()
-// {
-//     for (let index = 0; index < 5; index++) {
-//         const PlayerPlay = getPlayerChoice();
-//         const CompPlay = getComputerChoice();
-//         console.log(playRound(PlayerPlay,CompPlay));
-//     }
-//     if (playerWins > compWins)
-//         alert("Player has won in best of 5");
-//     else
-//         alert("Computer has won in best of 5");
-// }
 
 function optionPressed()
 {

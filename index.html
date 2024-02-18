@@ -6,39 +6,47 @@
     <title>RPS</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     
 </head>
 <body>
-    <h1 class="welcomeMsg">Welcome to Rock Paper Scissors, a project I built in my Web dev learning journey.
-
-        <span style="color: forestgreen;">First to 5, wins the game!</span> </h1>
-    <div id="scoreboard">
-        <div id="playerWins" class="scoreboardItems">
-            <h2>Player:</h2>
-            <p class="scoreNum">0</p>
+    <h1 class="welcomeMsg">Welcome to Rock Paper Scissors, a project I built in my Web dev learning journey.</h1>
+    
+    <h1 style="color: darkslategray; text-align: center;">First to 5, wins the game!</h1> 
+    
+    <div id="endMessage" class="disappear">This is the end message that decides who won.</div>
+    
+    
+    
+    <div id="gameContainer" class="disappears">
+        <div id="scoreboard">
+            <div id="playerWins" class="scoreboardItems">
+                <h2>Player:</h2>
+                <p class="scoreNum">0</p>
+            </div>
+            <div id="numOfDraws" class="scoreboardItems">
+                <h2>Draws:</h2>
+                <p class="scoreNum">0</p>
+            </div>
+            <div id="computerWins" class="scoreboardItems">
+                <h2>Computer:</h2>
+                <p class="scoreNum">0</p>
+            </div>
         </div>
-        <div id="numOfDraws" class="scoreboardItems">
-            <h2>Draws:</h2>
-            <p class="scoreNum">0</p>
-        </div>
-        <div id="computerWins" class="scoreboardItems">
-            <h2>Computer:</h2>
-            <p class="scoreNum">0</p>
-        </div>
-    </div>
-    <h1 class="instruction">Choose your next move</h1>
-    <div id="PlayerChoice">
-        <div id="rock" class="options">
-            <img src="./Images/rock.png" alt="Picture of a rock">
-            <p class="imageLabel">Rock</p>
-        </div>
-        <div id="paper" class="options">
-            <img src="./Images/paper.png" alt="Picture of a paper">
-            <p class="imageLabel">Paper</p>
-        </div>
-        <div id="scissor" class="options">
-            <img src="./Images/scissors.png" alt="Picture of a scissor">
-            <p class="imageLabel">Scissors</p>
+        <h1 class="instruction">Choose your next move</h1>
+        <div id="PlayerChoice">
+            <div id="rock" class="options">
+                <img src="./Images/rock.png" alt="Picture of a rock">
+                <p class="imageLabel">Rock</p>
+            </div>
+            <div id="paper" class="options">
+                <img src="./Images/paper.png" alt="Picture of a paper">
+                <p class="imageLabel">Paper</p>
+            </div>
+            <div id="scissor" class="options">
+                <img src="./Images/scissors.png" alt="Picture of a scissor">
+                <p class="imageLabel">Scissors</p>
+            </div>
         </div>
     </div>
 </body>

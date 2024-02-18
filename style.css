@@ -1,7 +1,13 @@
 *
 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Helvetica, serif;
     /* border: 2px solid red; */
+    
+}
+
+body
+{
+    background-image: url("./Images/backgroundImg.jpg");
 }
 
 .welcomeMsg
@@ -17,6 +23,7 @@
 {
     text-align: center;
     font-size: larger;
+    
 }
 
 .instruction
@@ -36,6 +43,9 @@
 .scoreboardItems
 {
     flex: 0 0 auto;
+    width: 160px;
+    text-align: center;
+    /* border: 2px dotted red; */
 }
 
 #PlayerChoice
@@ -60,3 +70,37 @@
     width: 160px;
     height: auto;
 }
+
+#endMessage
+{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    color: darkgreen;
+    margin-top: 200px;
+}
+
+.flicker
+{
+    /* animation: flash 1s ease-in-out 1; */
+    
+    background-color: gray;
+    transition: background-color 1s ease-in-out; /* Adjust duration and timing */
+    border-radius: 10px;
+}
+
+.fadeout
+{
+    animation: flash 1s ease-in-out 1;
+}
+
+.disappear
+{
+    display: none;
+}
+
+@keyframes flash {
+    from { opacity: 0.6; }
+    to { opacity: 0; }
+  }
+  
