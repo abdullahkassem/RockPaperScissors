@@ -1,0 +1,141 @@
+*
+{
+    font-family: Helvetica, serif;
+    /* border: 2px solid red; */
+    
+}
+
+body
+{
+    background-image: url("./Images/backgroundImg.jpg");
+}
+
+.welcomeMsg
+{
+    width: fit-content;
+    color: darkslategray;
+    text-align: center;
+    margin: auto;
+    white-space: pre-wrap;
+}
+
+.scoreNum
+{
+    text-align: center;
+    font-size: larger;
+    
+}
+
+.instruction
+{
+    color: darkslategray;
+    text-align: center;
+    /* padding-left: 30px; */
+}
+
+#scoreboard
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0px;
+}
+
+.scoreboardItems
+{
+    flex: 0 0 auto;
+    width: 160px;
+    text-align: center;
+    /* border: 2px dotted red; */
+}
+
+#PlayerChoice
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.options
+{
+    flex: 0 0 auto;
+    
+}
+
+.imageLabel
+{
+    text-align: center;
+}
+
+.options img
+{
+    width: 160px;
+    height: auto;
+}
+
+p.imageLabel
+{
+    font-weight: 500;
+}
+
+#newGame
+{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#newGame p
+{
+    width: fit-content;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: auto;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+#newGame button
+{
+    background-color: darkslategray;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+    width: fit-content;
+    align-self: center;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: none;
+}
+
+#endMessage
+{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    color: darkgreen;
+    margin: 100px 0px;
+}
+
+.flicker
+{
+    /* animation: flash 1s ease-in-out 1; */
+    
+    background-color: gray;
+    transition: background-color 1s ease-in-out; /* Adjust duration and timing */
+    border-radius: 10px;
+}
+
+.fadeout
+{
+    animation: flash 1s ease-in-out 1;
+}
+
+.disappear
+{
+    display: none;
+}
+
+@keyframes flash {
+    from { opacity: 0.6; }
+    to { opacity: 0; }
+  }
+  
