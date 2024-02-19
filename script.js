@@ -13,7 +13,6 @@ const winTracker = {
       if(this.playerWins >= 5)
       {
         console.log("Player Wins!!");
-        this.resetWins();
         gameEnd("Player has won the game");
         confetti();
       }
@@ -27,7 +26,6 @@ const winTracker = {
       if(this.compWins >= 5)
       {
         console.log("Computer Wins!!");
-        this.resetWins();
         gameEnd("Computer has won the game");
       }
     },
@@ -44,7 +42,10 @@ const winTracker = {
         this.playerWins = 0;
         this.compWins = 0;
         this.draws = 0;
-        
+        const scores = document.querySelectorAll(".scoreNum");
+        scores.forEach(score =>{
+            score.textContent = 0;
+        });
     },
   };
   
@@ -52,18 +53,17 @@ const winTracker = {
 function gameEnd(txt)
 {
     const gameContainer = document.querySelector("#gameContainer");
-    const finalText = document.querySelector("#endMessage");
-    finalText.textContent = txt;
+    const endDisplay = document.querySelector("#endDisplay");
+    const endMessage = document.querySelector("#endMessage");
+    
+    endMessage.textContent = txt;
     
     gameContainer.classList.add("fadeout");
     setTimeout(() => {
         gameContainer.classList.remove("fadeout");
         gameContainer.classList.add("disappear");
-        finalText.classList.remove("disappear");
+        endDisplay.classList.remove("disappear");
     }, 1000); // Adjust timeout for 1 second
-
-    
-
 
 }
 
@@ -116,7 +116,19 @@ function optionPressed()
     playRound(clickedId, getComputerChoice() );
 }
 
-const buttons = document.querySelectorAll(".options");
-buttons.forEach( button => {
-    button.addEventListener("click",optionPressed)
+    const buttons = document.querySelectorAll(".options");
+    buttons.forEach( button => {
+        button.addEventListener("click",optionPressed)
+    });
+
+    const newGameButton = document.querySelector(".newGameButton");
+
+    newGameButton.addEventListener("click",()=>{
+        const gameContainer = document.querySelector("#gameContainer");
+        const endDisplay = document.querySelector("#endDisplay");
+        
+        gameContainer.classList.remove("disappear");
+        endDisplay.classList.add("disappear");
+
+        winTracker.resetWins();
     });
